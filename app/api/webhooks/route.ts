@@ -34,8 +34,8 @@ export async function POST(req: NextRequest) {
       });
 
       const client = await clerkClient();
-      client.users.updateUserMetadata(data.id, {
-        privateMetadata: {
+      await client.users.updateUserMetadata(data.id, {
+        publicMetadata: {
           role: dbUser.role || "USER",
         },
       });
