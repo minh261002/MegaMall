@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 
 const DashboardPage = async () => {
   const user = await currentUser();
+
   if (!user?.publicMetadata || user?.publicMetadata.role === "USER")
     redirect("/");
 
